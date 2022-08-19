@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.sass';
+import { useState, useRef, useEffect } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0),
+        onClickPlus = ()=>{
+          setCount(count + 1)
+        },
+        onClickMinus = ()=>{ if(count >0) {setCount(count - 1)} }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Counter</h2>
+      <h1>{count}</h1>
+      <div className="buttons">
+        <button onClick={onClickMinus} className='minus'>- Minus</button>
+        <button onClick={onClickPlus} className='plus'>+ Plus</button>
+      </div>
     </div>
   );
 }
