@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap')
+
 *
     margin: 0
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Nunito', sans-serif
 body
-    background-color: antiquewhite
+    background-color: lightskyblue
 #root
     display: grid
     justify-content: center
-    align-items: start
+    align-items: center
     height: 100vh
     width: 100vw
+    overflow: hidden
     img
         min-width: 60px
         width: 9vh
@@ -16,49 +19,71 @@ body
         height: 9vh
         user-select: none
         filter: drop-shadow(2px 4px 6px black)
-    .images-container
-        max-width: 1200px
-        margin: 10px 15px
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-        gap: 10px 5px
     .App
-        
         display: inherit
-        justify-items: center
-        margin: 10vh 0 0
+        justify-content: center
+        align-content: center
+        gap: 15px
+        position: relative
+        width: 85vw
+        min-width: 325px
+        max-width: 800px
+        height: 70vh
+        max-height: 450px
+        min-height: 300px
+        background-color: white
+        border-radius: 50px
+        &:before,
+        &:after 
+            content: ''
+            display: block
+            height: 50px
+            position: absolute
+            border-radius: 0 0 30px 30px
+        &:before
+            width: 95%
+            background-color: rgba(255, 255, 255, 0.8)
+            top: 91%
+            left: 2.5%
+            z-index: 0
+        &:after 
+            width: 90%
+            background-color: rgba(255, 255, 255, 0.3)
+            top: 93%
+            left: 5%
+            z-index: 1
+        .progress 
+            height: 10px
+            width: 75vw
+            min-width: 300px
+            max-width: 750px
+            border-radius: 30px
+            background-color: rgb(232, 232, 232)
+            &__inner 
+                height: 100%
+                border-radius: 30px
+                width: 80%
+                background: rgb(18, 231, 48)
+                transition: all 0.3s ease-in-out
+                background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%)
         h1
-            color:black
-            font-size: 7vmax
-            font-weight: 400
-            font-family: 'Rubik', sans-serif
-        h2
-            color: grey
-            font-size: 5vh
-        .buttons
-            width: 300px
-            display: flex
-            justify-content: space-between
-            align-items: center
-            button
-                font-size: 3vh
+            font-size: 4vh
+            font-weight: 500
+        ul   
+            padding: 0
+            li
+                user-select: none
+                list-style-type: none
+                font-size: 2vh
+                margin: 15px 0 0
                 padding: 10px 15px
                 border-radius: 15px
-                border: 0
-                transition: all 0.1s ease-in-out
+                border: 3px solid #cacaca8c
+                transition: background 0.1s ease-in-out
                 cursor: pointer
-            .minus
-                background-color: #ff9797
-                filter: drop-shadow(0 4px 1px #c03c3ce3)
+                background-color: #fff
+                filter: drop-shadow(0 3px 1px #a3a3a383)
                 &:hover
-                    background-color: #ff7878
+                    background-color: #f5f5f579
                 &:active
-                    filter: drop-shadow(0px 2px 1px #c03c3ce3)
-            .plus
-                background-color: #83ff9e
-                filter: drop-shadow(0 4px 1px #50cc38e3)
-                &:hover
-                    background-color: #59fd7c
-                &:active
-                    filter: drop-shadow(0px 2px 1px #50cc38e3)
+                    filter: drop-shadow(0px 2px 1px #b6b6b6e3)
