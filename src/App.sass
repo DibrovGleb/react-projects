@@ -12,17 +12,10 @@ body
     height: 100vh
     width: 100vw
     overflow: hidden
-    img
-        min-width: 60px
-        width: 9vh
-        min-height: 60px
-        height: 9vh
-        user-select: none
-        filter: drop-shadow(2px 4px 6px black)
     .App
         display: inherit
         justify-content: center
-        align-content: center
+        align-content: space-evenly
         gap: 15px
         position: relative
         width: 85vw
@@ -45,27 +38,13 @@ body
             background-color: rgba(255, 255, 255, 0.8)
             top: 91%
             left: 2.5%
-            z-index: 0
+            z-index: -1
         &:after 
             width: 90%
             background-color: rgba(255, 255, 255, 0.3)
             top: 93%
             left: 5%
-            z-index: 1
-        .progress 
-            height: 10px
-            width: 75vw
-            min-width: 300px
-            max-width: 750px
-            border-radius: 30px
-            background-color: rgb(232, 232, 232)
-            &__inner 
-                height: 100%
-                border-radius: 30px
-                width: 80%
-                background: rgb(18, 231, 48)
-                transition: all 0.3s ease-in-out
-                background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%)
+            z-index: -2
         h1
             font-size: 4vh
             font-weight: 500
@@ -87,3 +66,40 @@ body
                     background-color: #f5f5f579
                 &:active
                     filter: drop-shadow(0px 2px 1px #b6b6b6e3)
+        .progress 
+            height: 10px
+            width: 75vw
+            border: 1px solid #acacacb7
+            min-width: 300px
+            max-width: 750px
+            border-radius: 30px
+            background-color: rgba(232, 232, 232, 0.356)
+            filter: drop-shadow(2px 2px 1px #b6b6b679)
+            &__inner 
+                height: 100%
+                border-radius: 30px
+                width: 80%
+                transition: all 0.3s ease-in-out
+                background: linear-gradient(90deg, rgb(0 255 36), rgb(40 219 255))
+        .result
+            display: inherit
+            gap: 15px
+            justify-items: center
+            button
+                color: #fff
+                font-size: 2.5vmin
+                padding: 10px 25px
+                border: 0
+                border-radius: 30px
+                background: linear-gradient(45deg, #ff0037, #bd36b0)
+                transition: transform 0.3s
+                cursor: pointer
+                &:hover
+                    transform: scale(1.2) translateY(5px)
+            h1
+                font-size: 4vmin
+            img
+                max-width: 20vmin
+                user-select: none
+                filter: drop-shadow(2px 4px 4px black)
+        
