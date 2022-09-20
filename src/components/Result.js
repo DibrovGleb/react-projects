@@ -1,6 +1,6 @@
 import medium from '../icons/confetti512px.png'
 
-export default function Result({correct, questions}) {
+export default function Result({correct, questions, onClickReset}) {
     let answer
     switch (correct) {
         case 0:
@@ -21,9 +21,7 @@ export default function Result({correct, questions}) {
         </div>
         <img src={medium} alt="Confetti icon" />
         <h1 className='res'>Вы отгадали {correct + answer}  из {questions.length}</h1>
-        <a href="/">
-            <button>Попробовать снова</button>
-        </a>
+        <button onClick={()=> onClickReset()}>Попробовать снова</button>
       </div>
     )
 }

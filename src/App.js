@@ -13,7 +13,10 @@ export default function App() {
           setTimeout(() => {
             setStep(step + 1)
             if(index === question.correct) setCorrect(correct + 1)
-          }, 100)
+        }, 100)},
+        onClickReset = ()=>{
+            setStep(0)
+            setCorrect(0)
         }
 
   return (
@@ -21,7 +24,7 @@ export default function App() {
       {
         step != questions.length 
         ? <Game step={step} question={question} questions={questions} onClickAnswer={onClickAnswer}/> 
-        : <Result correct={correct} questions={questions}/>
+        : <Result correct={correct} questions={questions} onClickReset={onClickReset}/>
       } 
     </div>
   )
